@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /assets/
+Disallow: 
 
-Sitemap: https://www.tvojdomen.rs/sitemap.xml
+Sitemap: https://lukaaaaa77.github.io/kuca-automobila/sitemap.xml

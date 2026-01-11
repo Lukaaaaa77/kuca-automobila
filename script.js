@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img.src = image.src;
         img.alt = image.alt;
 
-        link.appendChild(img);
-        galleryGrid.appendChild(link);
+        link?.appendChild(img);
+        galleryGrid?.appendChild(link);
     });
 });

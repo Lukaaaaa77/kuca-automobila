@@ -9,12 +9,14 @@
     <meta name="author" content="Luka Simović">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="Img/slika22.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="Img/slika3.png" alt="Mercedes Logo"></a>
+            <img src="Img/slika3.png" alt="Mercedes Logo">
         </div>
         <nav>
             <ul>
@@ -23,16 +25,18 @@
                 <li><a href="galerija.html">Galerija</a></li>
                 <li><a href="kontakt.html" class="active">Kontakt</a></li>
                 <li><a href="autor.html">O Autoru</a></li>
-                 <li><a href="Dokumrnatcija.pdf" download>Dokumentacija</a></li>
-                <li><a href="Web sajt kolokvijum.zip" download>ZIP</a></li>
+                <li><a href="Dokumenatcija.pdf" download>Dokumentacija</a></li>
+                <li><a href="Web sajt kolokvijum.zip" download="Preuzmi projekat">ZIP</a></li>
             </ul>
         </nav>
     </header>
+
     <section class="contact">
         <div class="contact-header">
             <h2>Kontaktirajte nas</h2>
             <p>Imate pitanja ili želite više informacija o našim modelima? Pošaljite nam poruku!</p>
         </div>
+
         <div class="contact-form">
             <form id="contactForm" novalidate>
                 <div class="form-group">
@@ -40,30 +44,64 @@
                     <input type="text" id="name" name="name" required>
                     <small class="error"></small>
                 </div>
+
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
-                     <small class="error"></small>
+                    <small class="error"></small>
                 </div>
+
                 <div class="form-group">
                     <label for="subject">Predmet</label>
                     <input type="text" id="subject" name="subject" required>
-                     <small class="error"></small>
+                    <small class="error"></small>
                 </div>
+
                 <div class="form-group">
                     <label for="message">Poruka</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
-                     <small class="error"></small>
+                    <small class="error"></small>
                 </div>
+
+                <!-- ✅ DODATI RADIO (izaberi način kontakta) -->
+                <div class="form-group radio-group">
+                    <p class="radio-title">Kako želite da vas kontaktiramo?</p>
+
+                    <label class="radio-label">
+                        <input type="radio" name="contactMethod" id="contactEmail" value="email" required>
+                        Email
+                    </label>
+
+                    <label class="radio-label">
+                        <input type="radio" name="contactMethod" id="contactPhone" value="telefon" required>
+                        Telefon
+                    </label>
+
+                    <small class="error"></small>
+                </div>
+
+                <!-- ✅ DODAT CHECKBOX -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        Slažem se sa uslovima korišćenja i politikom privatnosti.
+                    </label>
+                    <small class="error"></small>
+                </div>
+
                 <button type="submit" class="cta-btn">Pošaljite poruku</button>
             </form>
+
             <p id="successMessage"></p>
-        </div>	
+        </div>
+    </section>
+
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
                 <img src="Img/slika3.png" alt="Mercedes Logo">
             </div>
+
             <div class="footer-links">
                 <ul>
                     <li><a href="index.html">Početna</a></li>
@@ -72,23 +110,22 @@
                     <li><a href="kontakt.html">Kontakt</a></li>
                     <li><a href="autor.html">O Autoru</a></li>
                     <li><a href="Dokumenatcija.pdf" download>Dokumentacija</a></li>
-                    <li><a href="Web sajt kolokvijum.zip" download>ZIP</a></li>
+                    <li><a href="Web sajt kolokvijum.zip" download="Preuzmi projekat">ZIP</a></li>
                 </ul>
             </div>
+
             <div class="footer-socials">
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-twitter"></i>
                 <i class="fab fa-youtube"></i>
             </div>
         </div>
+
         <div class="footer-bottom">
             <p>&copy; 2024 Mercedes-Benz. Sva prava zadržana.</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-

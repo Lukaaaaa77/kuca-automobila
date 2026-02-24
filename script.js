@@ -1,4 +1,4 @@
-// ===== HERO FADE-IN =====
+
 window.addEventListener("load", function () {
     const hero = document.querySelector(".fade-in");
 
@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
     }
 });
 
-// ===== FORM VALIDACIJA + LIVE + ANIMACIJE =====
+
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
 
@@ -83,13 +83,13 @@ if (form) {
     });
 }
 
-// ===== FILTER MODELA =====
+
 const filter = document.getElementById("model-filter");
 const modelCards = document.querySelectorAll(".model-card");
 
 if (filter && modelCards.length > 0) {
     filter.addEventListener("change", function() {
-        const value = this.value; // all, suv, sedan, sports
+        const value = this.value; 
 
         modelCards.forEach(card => {
             if (value === "all" || card.classList.contains(value)) {
@@ -106,18 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     moreButtons.forEach(button => {
         button.addEventListener("click", function(e){
-            e.preventDefault(); // sprečava scroll na vrh
+            e.preventDefault();  
 
             const card = this.closest(".model-card");
 
-            // Zatvori sve ostale kartice osim ove
+           
             document.querySelectorAll(".model-card").forEach(c => {
                 if(c !== card) {
                     c.classList.remove("show-more");
                 }
             });
 
-            // Toggle samo ovu karticu
+            
             card.classList.toggle("show-more");
         });
     });
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const galleryGrid = document.querySelector(".gallery-grid");
 
-    // Lista svih slika i alt tekstova
+    
     const images = [
         { src: "Img/slika20.jpg", alt: "Mercedes GLC" },
         { src: "Img/slika6.jpg", alt: "Mercedes E-Class" },
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { src: "Img/slika18.jpg", alt: "Mercedes SL" }
     ];
 
-    // Kreiranje HTML-a za svaku sliku
+    
     images.forEach(image => {
         const link = document.createElement("a");
         link.href = "#";
@@ -149,3 +149,79 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryGrid?.appendChild(link);
     });
 });
+
+
+const testDriveModal = document.getElementById("testDriveModal");
+const testDriveButtons = document.querySelectorAll(".test-drive-btn");
+const testDriveForm = document.getElementById("testDriveForm");
+const tdMessage = document.getElementById("tdMessage");
+
+if (testDriveModal && testDriveForm) {
+
+    const closeBtn = testDriveModal.querySelector(".close-btn");
+
+   
+    testDriveButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            testDriveModal.classList.add("show");
+            tdMessage.textContent = "";
+            testDriveForm.reset();
+        });
+    });
+
+    
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            testDriveModal.classList.remove("show");
+        });
+    }
+
+    
+    window.addEventListener("click", (e) => {
+        if (e.target === testDriveModal) {
+            testDriveModal.classList.remove("show");
+        }
+    });
+
+    
+    testDriveForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("tdName").value.trim();
+        const email = document.getElementById("tdEmail").value.trim();
+        const date = document.getElementById("tdDate").value;
+        const model = document.getElementById("tdModel").value;
+
+        let errors = [];
+
+        const nameRegex = /^[A-ZČĆŽŠĐ][a-zčćžšđ]+(\s[A-ZČĆŽŠĐ][a-zčćžšđ]+)+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!nameRegex.test(name)) errors.push("Unesite ime i prezime (npr. Marko Marković).");
+        if (!emailRegex.test(email)) errors.push("Unesite ispravan email.");
+        if (!date) errors.push("Izaberite datum test vožnje.");
+        if (!model) errors.push("Izaberite model automobila.");
+
+        if (errors.length > 0) {
+            tdMessage.style.color = "red";
+            tdMessage.innerHTML = errors.join("<br>");
+        } else {
+            tdMessage.style.color = "green";
+            tdMessage.textContent = `Zahtev za test vožnju uspešno poslat! Hvala, ${name}.`;
+            testDriveForm.reset();
+        }
+    });
+}
+
+
+const tdDateInput = document.getElementById("tdDate");
+
+if(tdDateInput){
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    const dd = String(today.getDate()).padStart(2, '0');
+    
+    tdDateInput.min = `${yyyy}-${mm}-${dd}`;
+}

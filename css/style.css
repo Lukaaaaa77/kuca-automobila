@@ -369,15 +369,15 @@ footer {
 .models-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* centrirano */
-    gap: 70px; /* razmak između kartica */
-    max-width: 1200px; /* roditelj se ne širi previše */
+    justify-content: center; 
+    gap: 70px; 
+    max-width: 1200px; 
     margin: 0 auto;
     align-items: flex-start;
     }
 
 .model-card {
-    flex: 0 1 300px; /* fleksibilno: minimalno 0, raste po potrebi, bazirano na 300px */
+    flex: 0 1 300px; 
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -592,7 +592,7 @@ footer {
     transform: translateY(0);
 }
 
-/* ===== GREŠKE I SUCCESS PORUKA ===== */
+
 .error {
     color: red;
     font-size: 14px;
@@ -612,18 +612,16 @@ footer {
 }
 
 .more-text {
-    max-height: 0;          /* zatvoreno po default-u */
+    max-height: 0;          
     overflow: hidden;
     transition: max-height 0.5s ease;
 }
 
 .model-card.show-more .more-text {
-    max-height: 500px;      /* dovoljno da se vidi tekst */
+    max-height: 500px;      
 }
 
-/* ========================= */
-/* RESPONSIVE – MOBILE */
-/* ========================= */
+
 @media (max-width: 768px) {
 
     header {
@@ -651,7 +649,7 @@ footer {
         padding: 0 10px;
     }
 
-    /* MODELI */
+    
     .models-list {
         gap: 30px;
     }
@@ -660,24 +658,24 @@ footer {
         flex: 0 1 100%;
     }
 
-    /* GALERIJA */
+    
     .gallery-grid {
         grid-template-columns: 1fr;
     }
 
-    /* TESTIMONIALS */
+    
     .testimonial-container {
         grid-template-columns: 1fr;
     }
 
-    /* FOOTER */
+    
     .footer-container {
         flex-direction: column;
         gap: 30px;
         text-align: center;
     }
 
-    /* AUTOR */
+    
     .autor {
         flex-direction: column;
         padding: 40px 20px;
@@ -697,12 +695,9 @@ footer {
     }
 }
 
-/* ===================== */
-/* RESPONSIVE – TABLET */
-/* ===================== */
+
 @media (min-width: 769px) and (max-width: 1024px) {
 
-    /* HERO */
     .hero {
         height: 400px;
     }
@@ -711,31 +706,30 @@ footer {
         font-size: 40px;
     }
 
-    /* MODELI */
+    
     .models-list {
         gap: 40px;
     }
 
     .model-card {
-        flex: 0 1 45%; /* 2 u redu */
+        flex: 0 1 45%; 
     }
 
-    /* CAR GRID */
+    
     .car-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* TESTIMONIALS */
+    
     .testimonial-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* GALERIJA */
+   
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* AUTOR */
     .autor {
         flex-direction: column;
         padding: 60px 60px;
@@ -752,9 +746,105 @@ footer {
         text-align: center;
     }
 
-    /* FOOTER */
+    
     .footer-container {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+
+#testDriveModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+
+    opacity: 0;              
+    pointer-events: none;     
+    transition: opacity 0.3s ease;
+}
+
+#testDriveModal.show {
+    opacity: 1;
+    pointer-events: auto;     
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+#testDriveModal.show .modal-content {
+    transform: translateY(0); 
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #f1c40f;
+}
+
+
+#testDriveForm input,
+#testDriveForm select,
+#testDriveForm button {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+#testDriveForm input:focus,
+#testDriveForm select:focus {
+    border-color: #f1c40f;
+    box-shadow: 0 0 5px rgba(241,196,15,0.5);
+    outline: none;
+}
+
+#testDriveForm button {
+    background-color: #f1c40f;
+    color: #333;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#testDriveForm button:hover {
+    background-color: #e0b10f;
+    transform: scale(1.05);
+}
+
+#tdMessage {
+    font-size: 14px;
+    margin-bottom: 10px;
+    min-height: 18px;
 }

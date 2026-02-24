@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://lukaaaaa77.github.io/kuca-automobila/sitemap.xml

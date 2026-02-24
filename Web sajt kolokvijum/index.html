@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes Automobili | Luksuzni modeli, performanse i dizajn</title>
+    <meta name="description" content="Mercedes automobili – luksuzni modeli, vrhunske performanse i moderan dizajn. Pogledajte ponudu A, C, E i S klase.">
+    <meta name="keywords" content="Mercedes, Mercedes automobili, Mercedes Benz, luksuzni automobili, A Class, C Class, E Class, S Class">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="Img/slika22.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="Img/slika3.png" alt="Mercedes Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Početna</a></li>
+                <li><a href="modeli.html">Modeli</a></li>
+                <li><a href="galerija.html">Galerija</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="autor.html">O Autoru</a></li>
+                <li><a href="Dokumenatcija.pdf" download>Dokumentacija</a></li>
+                <li><a href="Web sajt kolokvijum.rar" download>ZIP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <h1>Dobrodošli u svet Mercedes automobila</h1>
+            <p>Uživajte u vrhunskom dizajnu i performansama.</p>
+        </div>
+    </section>
+
+    <section class="car-models">
+        <h2>Naši Mercedes modeli</h2>
+        <div class="car-container">
+            <div class="car-card">
+                <img src="Img/slika4.jpg" alt="Mercedes A-Class">
+                <h3>Mercedes A-Class</h3>
+                <p>Elegantan i kompaktan, savršen za gradsku vožnju i moderne vozače.</p>
+            </div>
+            <div class="car-card">
+                <img src="Img/slika5.jpg" alt="Mercedes C-Class">
+                <h3>Mercedes C-Class</h3>
+                <p>Prestižna limuzina koja kombinuje vrhunske performanse i luksuz.</p>
+            </div>
+            <div class="car-card">
+                <img src="Img/slika6.jpg" alt="Mercedes E-Class">
+                <h3>Mercedes E-Class</h3>
+                <p>Idealno vozilo za poslovne ljude koji traže performanse i sofisticiranost.</p>
+            </div>
+            <div class="car-card">
+                <img src="Img/slika8.jpg" alt="Mercedes S-Class">
+                <h3>Mercedes S-Class</h3>
+                <p>Vrhunski luksuz, prestiž i tehnologija na najvišim nivoima.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Šta naši klijenti kažu</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <img src="Img/slika9.jpg" alt="Klijent 1">
+                <p>"Mercedes je savršen automobil za moju porodicu. Luksuz, bezbednost i udobnost – sve što nam je potrebno!"</p>
+                <h3>Marko Jovanović</h3>
+                <p>Preduzetnik</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="Img/slika11.jpg" alt="Klijent 2">
+                <p>"Izbor Mercedes E-Class bio je moj najbolji poslovni potez. Vrhunska udobnost i impresivna tehnologija."</p>
+                <h3>Jovan Petrović</h3>
+                <p>Menadžer</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="Img/slika13.jpg" alt="Klijent 3">
+                <p>"Ne postoji automobil koji pruža ovako precizno upravljanje i luksuz kao Mercedes S-Class."</p>
+                <h3>Ivan Marković</h3>
+                <p>Inženjer</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Spremni za vožnju?</h2>
+            <p>Doživite luksuz i snagu koju Mercedes nudi. Pridružite se elitnoj grupi vozača koji biraju samo najbolje.</p>
+            <div class="cta-buttons">
+                <a href="modeli.html" class="cta-btn primary-btn">Pogledajte modele</a>
+                <button class="cta-btn secondary-btn test-drive-btn">Zakazi test voznju</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <div id="testDriveModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Zakazivanje test vožnje</h2>
+            <form id="testDriveForm">
+                <input type="text" id="tdName" placeholder="Ime i prezime">
+                <input type="email" id="tdEmail" placeholder="Email">
+                <input type="date" id="tdDate">
+                <select id="tdModel">
+                    <option value="">Izaberite model</option>
+                    <option value="A-Class">Mercedes A-Class</option>
+                    <option value="C-Class">Mercedes C-Class</option>
+                    <option value="E-Class">Mercedes E-Class</option>
+                    <option value="S-Class">Mercedes S-Class</option>
+                </select>
+                <div id="tdMessage"></div>
+                <button type="submit">Pošalji</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="Img/slika3.png" alt="Mercedes Logo">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="modeli.html">Modeli</a></li>
+                    <li><a href="galerija.html">Galerija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="autor.html">O Autoru</a></li>
+                    <li><a href="Dokumenatcija.pdf" download>Dokumentacija</a></li>
+                    <li><a href="Web sajt kolokvijum.zip" download="Preuzmi projekat">ZIP</a></li>
+                </ul>
+            </div>
+            <div class="footer-socials">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mercedes-Benz. Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
